@@ -7,5 +7,5 @@ Practice building a CLI tool in Python using Click
 - [x] positional args
 - [x] composability
 - [x] install with pip
-- [ ] pipe in/out
+- [x] pipe in/out
 - [x] ansi color
