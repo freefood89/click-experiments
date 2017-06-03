@@ -8,12 +8,18 @@ def hello(repeat):
 
 @click.command()
 @click.option('--rude', is_flag=True, default=False, help='rude mode')
+@click.option('--blue', is_flag=True, default=False, help='blue mode')
 @click.argument('name')
-def greet(rude, name):
-	if rude:
-		click.echo('Yo %s' % name)
+def greet(rude, blue, name):
+	if blue:
+		style = 'blue'
 	else:
-		click.echo('Hello %s' % name)
+		style = 'white'
+
+	if rude:
+		click.echo(click.style('Yo %s' % name, fg=style))
+	else:
+		click.echo(click.style('Hello %s' % name, fg=style))
 
 @click.group()
 def command():
